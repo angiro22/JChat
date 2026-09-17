@@ -1,4 +1,4 @@
-package com.angiro.jchat;
+package com.angiro22.jchat;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
