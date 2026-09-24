@@ -1,1 +1,9 @@
+# Compile output
+bin/
+out/
+
+# IntelliJ
 .idea/
+
+# System file
+.DS_Store
