@@ -16,5 +16,11 @@ public class ChatServer {
         } catch (IOException e) {
             System.err.println(e);
         }
+
+        try {
+            clientSocket.close();
+        } catch (IOException e) {
+            System.err.println(e);
+        }
     }
 }
