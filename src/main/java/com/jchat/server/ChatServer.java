@@ -1,3 +1,5 @@
+package com.jchat.server;
+
 import java.net.*;
 import java.io.*;
 
