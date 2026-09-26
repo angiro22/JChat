@@ -1,11 +1,11 @@
 package com.jchat.common;
 
 public class Message {
-    String userMessage, username;
+    String username, text;
 
-    public Message(String userMessage, String username) {
-        this.userMessage = userMessage;
+    public Message(String username, String text) {
         this.username = username;
+        this.text = text;
     }
 
     @Override
@@ -20,6 +20,6 @@ public class Message {
         // Use separator + 2 for the text index because in toString() the text is sent with a space after the separator
         text = messageReceived.substring(messageReceived.indexOf(Protocol.SEPARATOR) + 2);
 
-        return new Message(text, username); 
+        return new Message(username, text);
     }
 }
