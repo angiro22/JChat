@@ -10,6 +10,6 @@ public class Message {
 
     @Override
     public String toString() {
-        return username + "::: " + userMessage;
+        return username + Protocol.SEPARATOR + " " + userMessage;
     }
 }
