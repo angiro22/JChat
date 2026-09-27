@@ -10,7 +10,7 @@ public class Message {
 
     @Override
     public String toString() {
-        return username + Protocol.SEPARATOR + " " + userMessage;
+        return username + Protocol.SEPARATOR + " " + text;
     }
 
     // Given a message, this method parse it to a Message object
