@@ -1,16 +1,16 @@
 package com.jchat.client;
 
+import com.jchat.common.Protocol;
+
 import java.net.*;
 import java.io.*;
 
 public class ChatClient {
     static void main(String[] args) {
         Socket clientSocket = null;
-        String host = "127.0.0.1";
-        int port = 3333;
 
         try {
-            clientSocket = new Socket(host, port);
+            clientSocket = new Socket(Protocol.HOST, Protocol.PORT);
             System.out.println("Connected.");
         } catch (IOException e) {
             System.err.println(e);
