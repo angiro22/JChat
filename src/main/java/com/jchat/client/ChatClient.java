@@ -8,10 +8,6 @@ import java.util.Scanner;
 
 public class ChatClient {
     static void main(String[] args) {
-        Scanner keyboardInput = new Scanner(System.in);
-        String username = keyboardInput.nextLine();
-        keyboardInput.nextLine();
-
         Socket clientSocket = null;
 
         try {
@@ -28,6 +24,16 @@ public class ChatClient {
             PrintWriter outputStream = new PrintWriter(clientSocket.getOutputStream());
             // Keyboard user input
             BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
+
+            System.out.println("Insert you're username:");
+            String username = userInput.readLine();
+            while (username.contains(Protocol.SEPARATOR) ||
+                    username.contains(Protocol.EXIT_COMMAND) ||
+                    username.isBlank()) {
+                System.out.println("Invalid username.\nThe username mustn't be blank or contains " +
+                                    Protocol.SEPARATOR + " and " + Protocol.EXIT_COMMAND + ".\n Try again:");
+                System.out.println("Insert you're username:");
+            }
 
             System.out.println("=== JChat started ===");
 
