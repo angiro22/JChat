@@ -4,9 +4,14 @@ import com.jchat.common.Protocol;
 
 import java.net.*;
 import java.io.*;
+import java.util.Scanner;
 
 public class ChatClient {
     static void main(String[] args) {
+        Scanner keyboardInput = new Scanner(System.in);
+        String username = keyboardInput.nextLine();
+        keyboardInput.nextLine();
+
         Socket clientSocket = null;
 
         try {
