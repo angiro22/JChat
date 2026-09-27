@@ -1,3 +1,5 @@
+target/
+
 # Compile output
 bin/
 out/
