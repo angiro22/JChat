@@ -29,7 +29,7 @@ public class ChatClient {
             while (true) {
                 // Message to send
                 String outMessage = userInput.readLine();
-                if (outMessage.equals("/exit"))
+                if (outMessage.equals(Protocol.EXIT_COMMAND))
                     break;
 
                 outputStream.println(userInput);
