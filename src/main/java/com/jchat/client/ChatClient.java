@@ -35,6 +35,9 @@ public class ChatClient {
                 System.out.println("Insert you're username:");
             }
 
+            outputStream.println(userInput);
+            outputStream.flush();
+
             System.out.println("=== JChat started ===");
 
             while (true) {
