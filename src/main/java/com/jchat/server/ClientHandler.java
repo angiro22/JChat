@@ -19,6 +19,10 @@ public class ClientHandler extends Thread {
         outputStream = new PrintWriter(clientSocket.getOutputStream(), true, StandardCharsets.UTF_8);
     }
 
+    void send(String messageStr) {
+        outputStream.println(messageStr);
+    }
+
     @Override
     public void run() {
         try {
