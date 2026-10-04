@@ -7,19 +7,21 @@ import java.io.PrintWriter;
 import java.net.*;
 
 public class ClientHandler extends Thread {
-    Socket clientSocket;
-    ChatServer server;
+    private final Socket clientSocket;
+    private final ChatServer server;
+    private final PrintWriter outputStream;
 
-    public ClientHandler(Socket clientSocket, ChatServer server) {
+    public ClientHandler(Socket clientSocket, ChatServer server) throws IOException {
         this.clientSocket = clientSocket;
         this.server = server;
+
+        outputStream = new PrintWriter(clientSocket.getOutputStream());
     }
 
     @Override
     public void run() {
         try {
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            PrintWriter outputStream = new PrintWriter(clientSocket.getOutputStream());
 
             String username = inputStream.readLine();
 
