@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.*;
+import java.nio.charset.StandardCharsets;
 
 public class ClientHandler extends Thread {
     private final Socket clientSocket;
@@ -15,7 +16,7 @@ public class ClientHandler extends Thread {
         this.clientSocket = clientSocket;
         this.server = server;
 
-        outputStream = new PrintWriter(clientSocket.getOutputStream());
+        outputStream = new PrintWriter(clientSocket.getOutputStream(), true, StandardCharsets.UTF_8);
     }
 
     @Override
