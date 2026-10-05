@@ -45,7 +45,7 @@ public class ChatClient {
                 if (outMessage.equals(Protocol.EXIT_COMMAND))
                     break;
 
-                outputStream.println(userInput);
+                outputStream.println(outMessage);
                 outputStream.flush();
 
                 // Message to receive
