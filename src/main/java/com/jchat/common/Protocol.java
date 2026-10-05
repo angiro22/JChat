@@ -8,4 +8,10 @@ public final class Protocol {
 
     private Protocol() {
     }
+
+    public static boolean isUsernameValid(String username) {
+        return !(username.contains(SEPARATOR)
+        || username.contains(EXIT_COMMAND)
+        || username.isBlank());
+    }
 }

@@ -27,15 +27,14 @@ public class ChatClient {
 
             System.out.println("Insert you're username:");
             String username = userInput.readLine();
-            while (username.contains(Protocol.SEPARATOR) ||
-                    username.contains(Protocol.EXIT_COMMAND) ||
-                    username.isBlank()) {
+            while (!Protocol.isUsernameValid(username)) {
                 System.out.println("Invalid username.\nThe username mustn't be blank or contains " +
                                     Protocol.SEPARATOR + " and " + Protocol.EXIT_COMMAND + ".\n Try again:");
                 System.out.println("Insert you're username:");
+                username = userInput.readLine();
             }
 
-            outputStream.println(userInput);
+            outputStream.println(username);
             outputStream.flush();
 
             System.out.println("=== JChat started ===");
