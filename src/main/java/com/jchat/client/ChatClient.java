@@ -4,6 +4,7 @@ import com.jchat.common.Protocol;
 
 import java.net.*;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class ChatClient {
@@ -21,7 +22,7 @@ public class ChatClient {
             // Input stream from socket
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             // Output stream on socket
-            PrintWriter outputStream = new PrintWriter(clientSocket.getOutputStream());
+            PrintWriter outputStream = new PrintWriter(clientSocket.getOutputStream(), true, StandardCharsets.UTF_8);
             // Keyboard user input
             BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
 
@@ -35,7 +36,6 @@ public class ChatClient {
             }
 
             outputStream.println(username);
-            outputStream.flush();
 
             System.out.println("=== JChat started ===");
 
